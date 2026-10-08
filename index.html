@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CrowdTicker Media — Investor Awareness for Public Companies</title>
+<meta name="description" content="CrowdTicker Media puts your ticker in front of 100,000+ combined community members across our trading Discord network. Sponsored placements, fully disclosed as paid promotion.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --navy:#0B1F3B; --navy2:#10294f; --gold:#D4AF37; --teal:#008B9A; --ink:#eef1f8; --muted:#a7b0cc; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:'Inter',-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; background:var(--navy); color:var(--ink); line-height:1.6; }
+  h1,h2,h3,.brand-font { font-family:'Montserrat','Inter',sans-serif; }
+  .wrap { max-width:1080px; margin:0 auto; padding:0 24px; }
+
+  /* Nav */
+  .nav-bar { position:absolute; top:0; left:0; right:0; z-index:10; }
+  .nav-inner { max-width:1200px; margin:0 auto; padding:22px 28px; display:flex; justify-content:space-between; align-items:center; }
+  .nav-logo { color:#fff; text-decoration:none; font-family:'Montserrat',sans-serif; font-weight:800; letter-spacing:1.6px; font-size:18px; }
+  .nav-logo span { color:var(--gold); }
+  .nav-links { display:flex; gap:34px; align-items:center; }
+  .nav-links a { color:var(--ink); text-decoration:none; font-size:13px; font-weight:600; letter-spacing:2px; font-family:'Montserrat',sans-serif; opacity:.85; }
+  .nav-links a:hover { color:var(--gold); opacity:1; }
+
+  /* Hero */
+  .hero { position:relative; min-height:92vh; display:flex; align-items:center; background:url('assets/hero.jpg') center/cover no-repeat; }
+  .hero::before { content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(11,31,59,.55) 0%, rgba(11,31,59,.35) 40%, rgba(11,31,59,.88) 100%); }
+  .hero-content { position:relative; z-index:2; max-width:1200px; margin:0 auto; padding:120px 28px 80px; width:100%; }
+  .hero h1 { font-size:64px; line-height:1.05; margin:0 0 18px; font-weight:800; letter-spacing:1px; }
+  .hero h1 .gold { color:var(--gold); }
+  .hero p.sub { font-size:18px; color:#d7dcee; max-width:640px; margin:0 0 36px; }
+  .btn { display:inline-block; background:var(--gold); color:#201a05; font-weight:700; padding:15px 34px; border-radius:8px; text-decoration:none; font-size:15px; font-family:'Montserrat',sans-serif; letter-spacing:1.5px; }
+  .btn:hover { background:#e3bd45; }
+  .btn.ghost { background:transparent; border:1px solid var(--teal); color:var(--teal); }
+  .btn.ghost:hover { background:rgba(0,139,154,.12); }
+
+  /* Stats */
+  .stats-band { background:var(--navy2); border-top:1px solid #1d3a68; border-bottom:1px solid #1d3a68; }
+  .stats { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; padding:38px 24px; max-width:1080px; margin:0 auto; }
+  .stat { text-align:center; }
+  .stat b { display:block; font-size:34px; color:var(--gold); font-family:'Montserrat',sans-serif; font-weight:800; }
+  .stat span { font-size:13px; color:var(--muted); letter-spacing:.5px; }
+
+  section { padding:72px 0; }
+  h2.sec { font-size:34px; text-align:center; margin:0 0 10px; font-weight:800; }
+  h2.sec span { color:var(--gold); }
+  p.sec-sub { text-align:center; color:var(--muted); max-width:640px; margin:0 auto 44px; font-size:17px; }
+  .grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  .card { background:var(--navy2); border:1px solid #1d3a68; border-radius:14px; padding:28px; }
+  .card h3 { margin:0 0 10px; color:var(--gold); font-size:18px; }
+  .card p { color:var(--muted); font-size:15px; margin:0; }
+  .card .step-num { display:inline-block; font-family:'Montserrat',sans-serif; font-weight:800; color:var(--teal); font-size:14px; letter-spacing:2px; margin-bottom:10px; }
+
+  .tiers { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; align-items:stretch; }
+  .tier { background:var(--navy2); border:1px solid #1d3a68; border-radius:14px; padding:34px 28px; text-align:center; position:relative; display:flex; flex-direction:column; }
+  .tier.hot { border-color:var(--gold); }
+  .tier .flag { position:absolute; top:-13px; left:50%; transform:translateX(-50%); background:var(--gold); color:#201a05; font-size:12px; font-weight:700; padding:5px 16px; border-radius:20px; font-family:'Montserrat',sans-serif; letter-spacing:1px; }
+  .tier h3 { margin:0 0 4px; font-size:21px; }
+  .tier .price { font-size:38px; font-weight:800; color:var(--teal); margin:12px 0; font-family:'Montserrat',sans-serif; }
+  .tier ul { list-style:none; padding:0; margin:0 0 26px; text-align:left; font-size:14.5px; color:var(--muted); flex:1; }
+  .tier li { margin:9px 0; }
+  .tier li::before { content:"✓ "; color:var(--teal); font-weight:700; }
+
+  .compliance { background:#0e2547; border:1px dashed #2a4a7a; border-radius:12px; padding:26px 28px; font-size:14px; color:var(--muted); max-width:1080px; margin:0 auto; }
+  .faq details { background:var(--navy2); border:1px solid #1d3a68; border-radius:10px; padding:18px 22px; margin-bottom:12px; }
+  .faq summary { cursor:pointer; font-weight:600; font-size:16px; }
+  .faq p { color:var(--muted); font-size:15px; }
+  .contact { text-align:center; background:linear-gradient(135deg,var(--navy2),#081426); border:1px solid #1d3a68; border-radius:18px; padding:64px 30px; }
+  .contact h2 { margin-top:0; }
+  footer { text-align:center; padding:36px 0 60px; color:var(--muted); font-size:13px; }
+  footer .fine { max-width:720px; margin:12px auto 0; }
+
+  @media(max-width:760px){
+    .hero h1{font-size:40px;} .hero p.sub{font-size:17px;}
+    .stats{grid-template-columns:repeat(2,1fr);}
+    .grid3,.tiers{grid-template-columns:1fr;}
+    .nav-links a:not(.btn){display:none;}
+  }
+</style></head>
+<body>
+
+<div class="nav-bar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#top" aria-label="CrowdTicker Media">CROWD<span>TICKER</span></a>
+    <div class="nav-links">
+      <a href="#network">MARKETS</a>
+      <a href="#how">COMPANIES</a>
+      <a href="#packages">PACKAGES</a>
+      <a href="#contact">CONTACT</a>
+    </div>
+  </div>
+</div>
+
+<div class="hero" id="top">
+  <div class="hero-content">
+    <h1>CROWD<span class="gold">TICKER</span><br>MEDIA</h1>
+    <p class="sub">Put your ticker in front of 100,000+ combined community members — sponsored placements across our trading Discord network, fully disclosed as paid promotion.</p>
+    <a class="btn" href="#how">LEARN MORE →</a>
+  </div>
+</div>
+
+<div class="stats-band" id="network">
+  <div class="stats">
+    <div class="stat"><b>100K+</b><span>combined community members</span></div>
+    <div class="stat"><b>100%</b><span>sponsor-approved content</span></div>
+    <div class="stat"><b>100%</b><span>paid-promotion disclosure</span></div>
+    <div class="stat"><b>Daily</b><span>trader conversations</span></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <section id="how">
+    <h2 class="sec">How it <span>works</span></h2>
+    <p class="sec-sub">Three steps from first call to your ticker in front of the crowd.</p>
+    <div class="grid3">
+      <div class="card"><span class="step-num">STEP 01</span><h3>Discovery call</h3><p>15 minutes. We learn your story, your news pipeline, and what a win looks like for your IR goals.</p></div>
+      <div class="card"><span class="step-num">STEP 02</span><h3>You approve everything</h3><p>We draft every post and placement. Nothing goes live without your written sign-off.</p></div>
+      <div class="card"><span class="step-num">STEP 03</span><h3>Launch across the network</h3><p>Sponsored placements and company updates across our trading Discord network — all clearly disclosed as paid promotion.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="sec">What sponsors <span>get</span></h2>
+    <p class="sec-sub">Real engagement from traders who open their brokerage apps daily — not another email blast nobody reads.</p>
+    <div class="grid3">
+      <div class="card"><h3>Network placements</h3><p>Your ticker placed across trading Discords where members discuss plays all day.</p></div>
+      <div class="card"><h3>Management AMA</h3><p>Live Q&amp;A with your CEO or IR team inside the communities, where available.</p></div>
+      <div class="card"><h3>Company updates</h3><p>Your news, filings, and milestones posted and discussed for the campaign duration.</p></div>
+      <div class="card"><h3>Launch announcement</h3><p>Coordinated launch post across the network to kick off your campaign.</p></div>
+      <div class="card"><h3>Engagement reporting</h3><p>Views, replies, and reach numbers after every placement — numbers you can take to your board.</p></div>
+      <div class="card"><h3>Compliance-first</h3><p>Every placement disclosed as paid promotion. No price targets, no hype — your legal team will approve.</p></div>
+    </div>
+  </section>
+
+  <section id="packages">
+    <h2 class="sec">Pack<span>ages</span></h2>
+    <p class="sec-sub">Start small and scale, or go all-in. Package details are illustrative — final deliverables are confirmed per campaign in the insertion order.</p>
+    <div class="tiers">
+      <div class="tier">
+        <h3>Test</h3><div class="price">$5,000</div>
+        <ul><li>2-week placement</li><li>Targeted communities</li><li>Launch announcement</li><li>Engagement report</li></ul>
+        <a class="btn ghost" href="#contact">Start here</a>
+      </div>
+      <div class="tier hot">
+        <div class="flag">MOST POPULAR</div>
+        <h3>Flagship</h3><div class="price">$12,000</div>
+        <ul><li>1 month, full network</li><li>Network placements</li><li>Management AMA (where available)</li><li>Company updates</li><li>Engagement report</li></ul>
+        <a class="btn" href="#contact">Book a call</a>
+      </div>
+      <div class="tier">
+        <h3>Partner</h3><div class="price">$20,000</div>
+        <ul><li>3 months, full network</li><li>Everything in Flagship</li><li>Extended campaign flight</li><li>Quarterly strategy review</li><li>Priority scheduling</li></ul>
+        <a class="btn ghost" href="#contact">Book a call</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="compliance">
+      <strong style="color:var(--gold);">Compliance note:</strong> CrowdTicker Media is a media and advertising company, not a registered investment adviser or broker-dealer. All sponsored content is clearly disclosed as paid promotion. We never publish price targets or investment recommendations. All content is pre-approved by the sponsoring company.
+    </div>
+  </section>
+
+  <section class="faq">
+    <h2 class="sec">Questions IR teams <span>ask us</span></h2>
+    <p class="sec-sub"></p>
+    <details><summary>Why Discord instead of a traditional IR firm?</summary><p>Traditional IR is email blasts to people who may never open a brokerage app. Our communities are traders discussing tickers all day — the engagement per dollar is in a different league, and we report real view and reply numbers.</p></details>
+    <details><summary>Will this pass our legal/compliance review?</summary><p>Yes — that's built in. Every placement carries a paid-promotion disclosure, you approve all content in advance, and we never publish price targets or predictions.</p></details>
+    <details><summary>We already have an IR firm. Is this a replacement?</summary><p>No — it's incremental reach your IR firm can't deliver. Most of our sponsors keep their existing IR and add us for direct retail-trader exposure.</p></details>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <h2 class="sec">Let's talk about <span>[TICKER]</span></h2>
+      <p class="sec-sub">15 minutes, no pitch decks — we'll tell you honestly if you're a fit.</p>
+      <a class="btn" href="mailto:hello@crowdtickermedia.com">hello@crowdtickermedia.com</a>
+      <p style="color:var(--muted); font-size:14px; margin-top:18px;">Prefer LinkedIn? Find us at CrowdTicker Media.</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 CrowdTicker Media. All sponsored content is disclosed as paid promotion.
+    <p class="fine">Not investment advice. Not a registered investment adviser or broker-dealer.</p>
+  </footer>
+</div>
+</body></html>
